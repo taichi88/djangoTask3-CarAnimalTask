@@ -3,6 +3,12 @@ from django.db import models
 # Create your models here.
 
 
-class Book(models.Model):
-    title  = models.CharField(default='book', max_length=100)
+class Animal(models.Model):
+
+    name = models.CharField(max_length=100)  # Name of the animal
+    species = models.CharField(max_length=50)  # Species (e.g., dog, cat, bird)
+    age = models.PositiveIntegerField()  # Age
+    is_endangered = models.BooleanField(default=False)
     
+    def __str__(self):
+        return f"{self.name} ({self.species})"
