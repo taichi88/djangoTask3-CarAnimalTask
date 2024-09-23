@@ -5,9 +5,8 @@ from . import views
 
 
 urlpatterns = [
-    path('add_animal/', views.add_animal ),
-    path('success/', views.success, name='success_urls'),
-    path('select_animal/', views.SelectAnimalView.as_view(), name="SelectAllAnimals")
-
+    path('add_animal/', views.AddAnimalView.as_view(), name='AddAnimals'),
+    path('', views.SelectAnimalView.as_view(), name="SelectAllAnimals"),
+    path('delete_animal/<int:pk>/', views.DeleteAnimalVIew.as_view(), name="DeleteAnimal")
 
 ]
